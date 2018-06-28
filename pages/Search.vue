@@ -138,9 +138,6 @@
               .then(response => {
                 this.result = response.data.data;
                 this.pagination = response.data.data.page;
-                if(this.result != undefined && this.pagination != undefined){
-                  //this.loaded.loaded = true;
-                }
               })
           },
           getAPIKey:function () {
@@ -154,8 +151,16 @@
               })
           }
         },
-        mounted() {
-          this.getAPI();
+
+        async asyncData({app, route}){
+          let [result] = await Promise.all([
+            app.$axios.get('http://dev.anduoc.vn/api/search?keyword='+route.query.keyword)
+          ])
+
+          return {
+            result: result.data.data,
+            pagination: result.data.data.page,
+          }
         }
     }
 </script>

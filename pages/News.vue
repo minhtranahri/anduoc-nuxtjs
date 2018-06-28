@@ -34,6 +34,7 @@
           sidebar: null,
         }
       },
+      
       mounted() {
         this.$axios
           .get('http://dev.anduoc.vn/api/news')
@@ -48,11 +49,11 @@
           })
       },
 
-      beforeMount() {
-          if(this.$store.state.loaded == true){
-            this.$store.commit('toggleLoadingStatus');
-          }
-        }
+      // beforeMount() {
+      //     if(this.$store.state.loaded == true){
+      //       this.$store.commit('toggleLoadingStatus');
+      //     }
+      //   }
     }
 </script>
 
