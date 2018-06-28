@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="296e7680-7b14-4910-9bff-2c69e703fd44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/pages/News.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/News.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ProductDetailChild/DetailInforChild/DescriptionChild/ProductReviews.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/ProductDetailChild/DetailInforChild/DescriptionChild/ProductReviews.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +17,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ProductReviews.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/ProductDetailChild/DetailInforChild/DescriptionChild/ProductReviews.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="674">
+              <caret line="161" column="62" selection-start-line="161" selection-start-column="62" selection-end-line="161" selection-end-column="62" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loading.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.nuxt/loading.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-140">
+              <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CategorySidebar.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/Category/CategorySidebar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2088">
-              <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
+            <state relative-caret-position="2034">
+              <caret line="123" column="55" selection-start-line="123" selection-start-column="55" selection-end-line="123" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -28,7 +50,7 @@
       <file leaf-file-name="Category.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Category.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
+            <state relative-caret-position="-50">
               <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
             </state>
           </provider>
@@ -39,15 +61,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="310">
               <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -64,17 +77,8 @@
       <file leaf-file-name="Header.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/layouts/Header.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nuxt.config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nuxt.config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+            <state relative-caret-position="378">
+              <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -83,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/pages/ProductDetail.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="70" column="10" lean-forward="true" selection-start-line="70" selection-start-column="10" selection-end-line="78" selection-end-column="11" />
+              <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="78" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -91,17 +95,17 @@
       <file leaf-file-name="Search.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/Search.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="854">
+            <state relative-caret-position="260">
               <caret line="155" column="25" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="News.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="News.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/News.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-194">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="594">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -143,6 +147,7 @@
       <find>ave</find>
       <find>child</find>
       <find>filter</find>
+      <find>2 th</find>
     </findStrings>
     <replaceStrings>
       <replace>/</replace>
@@ -159,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pages/product/p_ent.vue" />
         <option value="$PROJECT_DIR$/pages/product/p_id.vue" />
         <option value="$PROJECT_DIR$/pages/nesting.vue" />
         <option value="$PROJECT_DIR$/pages/_nesting/_id.vue" />
@@ -201,7 +205,6 @@
         <option value="$PROJECT_DIR$/store/index.js" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/components/HomeChild/HeaderChild/MainMenu.vue" />
-        <option value="$PROJECT_DIR$/components/ProductDetailChild/DetailInforChild/DescriptionChild/ProductReviews.vue" />
         <option value="$PROJECT_DIR$/nuxt.config.js" />
         <option value="$PROJECT_DIR$/pages/NewsDetail.vue" />
         <option value="$PROJECT_DIR$/layouts/Header.vue" />
@@ -210,6 +213,8 @@
         <option value="$PROJECT_DIR$/pages/ProductDetail.vue" />
         <option value="$PROJECT_DIR$/pages/Search.vue" />
         <option value="$PROJECT_DIR$/pages/News.vue" />
+        <option value="$PROJECT_DIR$/components/ProductDetailChild/DetailInforChild/DescriptionChild/ProductReviews.vue" />
+        <option value="$PROJECT_DIR$/.nuxt/loading.html" />
       </list>
     </option>
   </component>
@@ -251,6 +256,11 @@
             <path>
               <item name="anduoc-nuxt" type="b2602c69:ProjectViewProjectNode" />
               <item name="anduoc-nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name=".nuxt" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anduoc-nuxt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anduoc-nuxt" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -285,6 +295,27 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="HomeChild" type="462c0819:PsiDirectoryNode" />
               <item name="SectionChild" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anduoc-nuxt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anduoc-nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="ProductDetailChild" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anduoc-nuxt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anduoc-nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="ProductDetailChild" type="462c0819:PsiDirectoryNode" />
+              <item name="DetailInforChild" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anduoc-nuxt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anduoc-nuxt" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="ProductDetailChild" type="462c0819:PsiDirectoryNode" />
+              <item name="DetailInforChild" type="462c0819:PsiDirectoryNode" />
+              <item name="DescriptionChild" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anduoc-nuxt" type="b2602c69:ProjectViewProjectNode" />
@@ -362,12 +393,12 @@
       <workItem from="1530106297359" duration="166000" />
       <workItem from="1530150273272" duration="12749000" />
       <workItem from="1530175999581" duration="3827000" />
-      <workItem from="1530191171300" duration="3146000" />
+      <workItem from="1530191171300" duration="6208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137839000" />
+    <option name="totallyTimeSpent" value="140901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -412,9 +443,6 @@
           <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.nuxt/loading.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/components/HomeChild/FirstComponentChild.vue">
       <provider selected="true" editor-type-id="text-editor">
@@ -653,30 +681,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/ProductDetailChild/DetailInforChild/DescriptionChild/ProductReviews.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2862">
-          <caret line="159" column="12" selection-start-line="159" selection-start-column="12" selection-end-line="159" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/Category/CategorySidebar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2088">
-          <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/layouts/Header.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nuxt.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
@@ -698,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Category.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/NewsDetail.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -715,21 +712,59 @@
     <entry file="file://$PROJECT_DIR$/pages/ProductDetail.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="70" column="10" lean-forward="true" selection-start-line="70" selection-start-column="10" selection-end-line="78" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Search.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="854">
-          <caret line="155" column="25" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="25" />
+          <caret line="70" column="10" selection-start-line="70" selection-start-column="10" selection-end-line="78" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/News.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-194">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="594">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Search.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="155" column="25" selection-start-line="155" selection-start-column="25" selection-end-line="155" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/Category.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-50">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Category/CategorySidebar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2034">
+          <caret line="123" column="55" selection-start-line="123" selection-start-column="55" selection-end-line="123" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/layouts/Header.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/ProductDetailChild/DetailInforChild/DescriptionChild/ProductReviews.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="161" column="62" selection-start-line="161" selection-start-column="62" selection-end-line="161" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.nuxt/loading.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
         </state>
       </provider>
     </entry>

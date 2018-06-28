@@ -105,7 +105,7 @@
                     <a :href="'http://facebook.com/'+item.fbId_user" target="_blank">{{item.use_name}}</a>
                     <div class="rating_user">
                       <i v-for="(n, index) in parseInt(item.point)" :key="index" v-if="item.point !== 0" class="mcon-star active"></i>
-                        <span>2 tháng trước</span>
+                        <span>{{item.date_create}}</span>
                     </div>
                   </div>
                 </h4>
@@ -141,7 +141,6 @@
 
         mounted() {
           this.reviewsData = this.reviews;
-          console.log(this.reviews.total);
         },
 
         watch: {
