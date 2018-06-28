@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="296e7680-7b14-4910-9bff-2c69e703fd44" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/News.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/News.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Search.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Search.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -84,8 +82,8 @@
       <file leaf-file-name="ProductDetail.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/ProductDetail.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-72">
-              <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+            <state relative-caret-position="360">
+              <caret line="70" column="10" lean-forward="true" selection-start-line="70" selection-start-column="10" selection-end-line="78" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -102,8 +100,8 @@
       <file leaf-file-name="News.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/News.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+            <state relative-caret-position="-194">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -364,12 +362,12 @@
       <workItem from="1530106297359" duration="166000" />
       <workItem from="1530150273272" duration="12749000" />
       <workItem from="1530175999581" duration="3827000" />
-      <workItem from="1530191171300" duration="2605000" />
+      <workItem from="1530191171300" duration="3146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137298000" />
+    <option name="totallyTimeSpent" value="137839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -716,8 +714,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/ProductDetail.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+        <state relative-caret-position="360">
+          <caret line="70" column="10" lean-forward="true" selection-start-line="70" selection-start-column="10" selection-end-line="78" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -730,8 +728,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/News.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+        <state relative-caret-position="-194">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
