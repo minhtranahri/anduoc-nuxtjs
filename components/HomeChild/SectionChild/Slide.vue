@@ -3,15 +3,11 @@
     <div id="homeSlide" class="g1180">
       <div class="jsSlide">
         <div class="carousel-slide">
-          <ul class="layer-slide">
-            <li v-for="(item, index) in banner" :key="index" class="slide-item" v-if="item.type === typeOfHome">
-              <nuxt-link :to="item.url">
-                <img :src="item.picture" onerror="this.src = '/images/default.jpg'" :alt="item.name">
-              </nuxt-link>
-            </li>
-          </ul>
+          <home-top-slide v-if="this.$store.state.loaded" :banner="banner"/>
+          <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="30" primary="#d8d2d2" secondary="#c1baba" speed="1">
+            <rect x="0" y="0" rx="1" ry="1" width="100" height="27" />
+          </vue-content-loading>
         </div>
-
         <div id="bnRight">
           <div v-for="(bnRight, index2) in banner" :key="index2" v-if="bnRight.type !== typeOfHome"><nuxt-link to="#">
             <img :src="bnRight.picture" onerror="this.src = '/images/default.jpg'" :alt="bnRight.name"></nuxt-link>
@@ -37,25 +33,21 @@
 </template>
 
 <script>
+    import VueContentLoading from 'vue-content-loading';
+    import HomeTopSlide from './HomeTopSlide';
+
     export default {
         props: ['banner'],
         name: "Slide",
-        data(){
-          return{
-            typeOfHome: 'anduoc.slide_home'
-          }
+        components: {
+          VueContentLoading,
+          HomeTopSlide
         },
-        mounted(){
-          $('.layer-slide').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 4000,
-            adaptiveHeight: true,
-            dotsClass: 'slick-dots-edit slide',
-            dots: true
-          });
+      data(){
+        return{
+          typeOfHome: 'anduoc.slide_home'
         }
+      },
     }
 </script>
 

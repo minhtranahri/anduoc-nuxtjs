@@ -60,33 +60,41 @@
               this.same = response.data.data.product_same;
               this.product = response.data.data.product_detail;
               this.reviews = response.data.data.reviews;
-              // if(response){
-              //   this.$store.commit('toggleLoadingStatus');
-              // }
+              if(response){
+                this.$store.commit('toggleLoadingStatus');
+              }
             });
         }
       },
 
-      async asyncData({app, route}){
-          let [detailProduct] = await Promise.all([
-            app.$axios.get('http://dev.anduoc.vn/api/product/'+route.params.id)
-          ])
-          return {
-            breadcrumb: detailProduct.data.data.breadcrumb,
-            same: detailProduct.data.data.product_same,
-            product: detailProduct.data.data.product_detail,
-            reviews: detailProduct.data.data.reviews,
-          }
-      }
-        // mounted() {
-        //   this.getData();
-        // },
+      mounted() {
+          console.log('parent mounted')
+        if(!this.$store.state.ssrDetector){
+          this.getData();
+        }
+      },
 
-      // beforeMount(){
-      //   if(this.$store.state.loaded){
-      //     this.$store.commit('toggleLoadingStatus');
-      //   }
-      // }
+      async asyncData({app, route, store}){
+          if(store.state.ssrDetector){
+            store.state.loaded = true
+            let [detailProduct] = await Promise.all([
+              app.$axios.get('http://dev.anduoc.vn/api/product/'+route.params.id)
+            ])
+            return {
+              breadcrumb: detailProduct.data.data.breadcrumb,
+              same: detailProduct.data.data.product_same,
+              product: detailProduct.data.data.product_detail,
+              reviews: detailProduct.data.data.reviews,
+            }
+          }
+          else return false;
+      },
+
+      beforeMount(){
+        if(this.$store.state.loaded && this.$store.state.ssrDetector == false){
+          this.$store.commit('toggleLoadingStatus');
+        }
+      }
     }
 </script>
 

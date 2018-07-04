@@ -12,10 +12,10 @@
     </div>
     <section id="content" :style="isChanged == false?opacity:''">
       <div class="g1180">
-        <div v-if="isChanged == true" class="results-search">
+        <div v-if="this.$store.state.loaded" class="results-search">
           <p>Có <span>{{result != undefined?result.total_product:0}}</span> kết quả tìm kiếm theo từ khóa <span>"{{changeKeyword}}"</span></p>
         </div>
-        <div v-if="result != null" class="similar-product search-fix">
+        <div v-if="this.$store.state.loaded" class="similar-product search-fix">
 
           <div v-for="(item, index) in result.product" :key="index" class="item-product w16  padding-5 fl">
             <div class="wrap-item-product w100 fl">
@@ -82,7 +82,87 @@
             </div>
           </div>
         </div>
-        <pagination v-if="pagination !== null" :pagination="pagination"/>
+        <pagination v-if="this.$store.state.loaded" :pagination="pagination"/>
+        <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="100" primary="#d8d2d2" secondary="#c1baba" speed="1">
+          <rect x="0" y="1" rx="0.5" ry="0.5" width="23" height="0" />
+
+          <rect x="0" y="3" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="0" y="16" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="0" y="18" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="0" y="20" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="20" y="3" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="20" y="16" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="20" y="18" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="20" y="20" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="40" y="3" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="40" y="16" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="40" y="18" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="40" y="20" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="60" y="3" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="60" y="16" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="60" y="18" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="60" y="20" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="80" y="3" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="80" y="16" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="80" y="18" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="80" y="20" rx="0.5" ry="0.5" width="13" height="1" />
+
+
+          <rect x="0" y="23" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="0" y="36" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="0" y="38" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="0" y="40" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="20" y="23" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="20" y="36" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="20" y="38" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="20" y="40" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="40" y="23" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="40" y="36" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="40" y="38" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="40" y="40" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="60" y="23" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="60" y="36" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="60" y="38" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="60" y="40" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="80" y="23" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="80" y="36" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="80" y="38" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="80" y="40" rx="0.5" ry="0.5" width="13" height="1" />
+
+
+          <rect x="0" y="43" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="0" y="56" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="0" y="58" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="0" y="60" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="20" y="43" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="20" y="56" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="20" y="58" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="20" y="60" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="40" y="43" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="40" y="56" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="40" y="58" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="40" y="60" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="60" y="43" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="60" y="56" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="60" y="58" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="60" y="60" rx="0.5" ry="0.5" width="13" height="1" />
+
+          <rect x="80" y="43" rx="0.5" ry="0.5" width="19" height="12" />
+          <rect x="80" y="56" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="80" y="58" rx="0.5" ry="0.5" width="19" height="1" />
+          <rect x="80" y="60" rx="0.5" ry="0.5" width="13" height="1" />
+        </vue-content-loading>
       </div>
     </section>
   </div>
@@ -90,10 +170,11 @@
 
 <script>
     import Pagination from "../components/Category/Pagination";
+    import VueContentLoading from "vue-content-loading"
     export default {
       layout: 'Header',
         name: "Search",
-      components: {Pagination},
+      components: {Pagination, VueContentLoading},
       data() {
           return {
             result: null,
@@ -106,12 +187,15 @@
 
         watch: {
           $route:function () {
+            if(this.$store.state.loaded == true){
+              this.$store.commit('toggleLoadingStatus');
+            }
             this.getAPI();
           },
 
           changeKeyword:function () {
             clearTimeout(x);
-            this.isChanged = false;
+            this.$store.state.loaded = false;
             var x = setTimeout(this.getAPIKey, 1000);
           },
         },
@@ -138,6 +222,9 @@
               .then(response => {
                 this.result = response.data.data;
                 this.pagination = response.data.data.page;
+                if(response){
+                  this.$store.state.loaded = true;
+                }
               })
           },
           getAPIKey:function () {
@@ -147,20 +234,37 @@
               .then(response => {
                 this.result = response.data.data;
                 this.pagination = response.data.data.page;
-                this.isChanged = true;
+                if(response){
+                  this.$store.state.loaded = true;
+                }
               })
           }
         },
 
-        async asyncData({app, route}){
-          let [result] = await Promise.all([
-            app.$axios.get('http://dev.anduoc.vn/api/search?keyword='+route.query.keyword)
-          ])
-
-          return {
-            result: result.data.data,
-            pagination: result.data.data.page,
+        mounted() {
+          if(!this.$store.state.ssrDetector){
+            this.getAPIKey();
           }
+        },
+
+      beforeMount(){
+        if(this.$store.state.loaded && this.$store.state.ssrDetector == false){
+          this.$store.commit('toggleLoadingStatus');
+        }
+      },
+
+        async asyncData({app, route, store}){
+          if(store.state.ssrDetector){
+            store.state.loaded = true;
+            let [result] = await Promise.all([
+              app.$axios.get('http://dev.anduoc.vn/api/search?keyword='+route.query.keyword+'&page='+route.query.page)
+            ]);
+            return {
+              result: result.data.data,
+              pagination: result.data.data.page,
+            }
+          }
+          else return false;
         }
     }
 </script>

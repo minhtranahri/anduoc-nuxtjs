@@ -1,9 +1,9 @@
 <template>
   <div class="middleProductView">
-    <div class="productRate">
+    <div v-if="this.$store.state.loaded" class="productRate">
       <h1 title="Trà túi lọc diệp hạ châu Ladophar">{{product.name}}</h1>
     </div>
-    <div class="BillInformation">
+    <div v-if="this.$store.state.loaded" class="BillInformation">
       <p class="price-pro">{{product.price}} VNĐ</p>
       <p>Giá trước đây
         <span style="text-decoration: line-through">{{product.old_price}} VNĐ</span>
@@ -88,7 +88,7 @@
         </table>
       </div>
     </div>
-    <div class="SaleProduct">
+    <div v-if="this.$store.state.loaded" class="SaleProduct">
       <div>
         <div class="pick">
           <div class="head">Số lượng</div>
@@ -110,7 +110,7 @@
       </div>
 
     </div>
-    <div class="add-to-cart">
+    <div v-if="this.$store.state.loaded" class="add-to-cart">
       <div id="buy-btn">
         <button id="buy">Mua ngay</button>
         <button id="cart">
@@ -120,8 +120,7 @@
       </div>
 
     </div>
-
-    <div class="support-online">
+    <div v-if="this.$store.state.loaded" class="support-online">
       <h2>Hỗ trợ trực tuyến</h2>
       <p>
         <i class="mcon-skype blue"></i>
@@ -132,13 +131,37 @@
         <span>Hỗ trợ 2-0944944449 </span>
       </p>
     </div>
+    <vue-content-loading v-if="!this.$store.state.loaded" :width="100" :height="100" primary="#d8d2d2" secondary="#c1baba" speed="1">
+      <rect x="0" y="0" rx="1" ry="1" width="100" height="5" />
+      <rect x="0" y="6" rx="1" ry="1" width="60" height="5" />
+      <rect x="0" y="15" rx="1" ry="1" width="30" height="5" />
+      <rect x="0" y="22" rx="1" ry="1" width="20" height="2" />
+      <rect x="22" y="22" rx="1" ry="1" width="20" height="2" />
+      <rect x="44" y="22" rx="1" ry="1" width="30" height="2" />
+      <rect x="0" y="28" rx="1" ry="1" width="100" height="20" />
+      <rect x="0" y="52" rx="1" ry="1" width="20" height="8" />
+      <rect x="0" y="62" rx="1" ry="1" width="30" height="11" />
+      <rect x="31" y="62" rx="1" ry="1" width="30" height="11" />
+      <!--<rect x="0" y="78" rx="0" ry="0" width="60" height="2" />-->
+      <!--<rect x="0" y="82" rx="0" ry="0" width="60" height="2" />-->
+      <!--<rect x="0" y="86" rx="0" ry="0" width="60" height="2" />-->
+      <!--<rect x="0" y="90" rx="0" ry="0" width="60" height="2" />-->
+      <!--<rect x="0" y="94" rx="0" ry="0" width="60" height="2" />-->
+    </vue-content-loading>
   </div>
 </template>
 
 <script>
+  import VueContentLoading from "vue-content-loading"
     export default {
         props: ['product'],
-        name: "DetailInfor"
+        name: "DetailInfor",
+      components: {VueContentLoading}
+      // watch: {
+      //   hots: function () {
+      //     console.log(this.product[0].name)
+      //   }
+      // }
     }
 </script>
 

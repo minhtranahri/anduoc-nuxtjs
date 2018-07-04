@@ -1,10 +1,12 @@
 import Vuex from 'vuex'
+import isBot from 'isbot';
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
       key: '',
-      loaded: false
+      loaded: false,
+      ssrDetector: false
     },
     mutations: {
       modifiedKey (state, newKey) {
@@ -17,6 +19,17 @@ const createStore = () => {
         else{
           state.loaded = true
         }
+      },
+      toggleSsrDetect(state){
+        state.ssrDetector = true
+      }
+    },
+    actions: {
+      async nuxtServerInit({dispatch, commit,isServer,state}, {req}) {
+        if (isBot(req.headers['user-agent'])) {
+          return commit('toggleSsrDetect');
+        }
+        return;
       }
     }
   })

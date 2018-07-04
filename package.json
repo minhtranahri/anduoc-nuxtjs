@@ -1,4 +1,10 @@
 {
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3000"
+    }
+  },
   "name": "anduoc-nuxt",
   "version": "1.0.0",
   "description": "Nuxt.js project",
@@ -15,7 +21,8 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.1",
     "isbot": "^2.1.2",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-content-loading": "^1.5.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

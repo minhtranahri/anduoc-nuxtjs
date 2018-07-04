@@ -39,9 +39,9 @@
 
         watch: {
           $route: function () {
-            // if(this.$store.state.loaded == true){
-            //   this.$store.commit('toggleLoadingStatus');
-            // }
+            if(this.$store.state.loaded == true){
+              this.$store.commit('toggleLoadingStatus');
+            }
             this.getAPI();
           }
         },
@@ -64,28 +64,34 @@
           }
         },
 
-        async asyncData({app, route}) {
-          let [category] = await Promise.all([
-            app.$axios.get('http://dev.anduoc.vn/api/categories'+route.fullPath)
-          ])
-          return {
-            products: category.data.data.product,
-            sidebar: category.data.data,
-            pagination: category.data.data.page,
-            breadcrumb: category.data.data.breadcrumb,
-          }
-        }
+        async asyncData({app, route,store}) {
+            if(store.state.ssrDetector){
+              store.state.ssrDetector = true
+              let [category] = await Promise.all([
+                app.$axios.get('http://dev.anduoc.vn/api/categories' + route.fullPath)
+              ])
+              return {
+                products: category.data.data.product,
+                sidebar: category.data.data,
+                pagination: category.data.data.page,
+                breadcrumb: category.data.data.breadcrumb,
+              }
+            }
+          },
 
-        // mounted() {
-        //   this.getAPI();
-        // },
-        //
-        // beforeMount() {
-        //   if(this.$store.state.loaded == true){
-        //     this.$store.commit('toggleLoadingStatus');
-        //   }
-        // }
+        mounted(){
+          if(this.$store.state.ssrDetector == false){
+            this.getAPI();
+          }
+        },
+
+      beforeMount(){
+        if(this.$store.state.loaded && this.$store.state.ssrDetector == false){
+          this.$store.commit('toggleLoadingStatus');
+        }
+      }
     }
+
 </script>
 
 <style scoped>

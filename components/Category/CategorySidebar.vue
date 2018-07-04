@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar w20 fl">
-    <div class="full-sidebar w100 fl">
+    <div v-if="this.$store.state.loaded" class="full-sidebar w100 fl">
       <div id="box_cat" class="box-category-product w100 fl"
            :data-rewrite="sidebar.sidebar.link_web" data-id="1">
         <div class="title-box-category-product">
@@ -52,13 +52,27 @@
         </div>
       </div>
     </div>
+    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="200" primary="#d8d2d2" secondary="#c1baba" speed="1">
+      <rect x="0" y="0" rx="3" ry="3" width="100" height="18" />
+      <rect x="0" y="25" rx="3" ry="3" width="100" height="5" />
+      <rect x="5" y="38" rx="3" ry="3" width="93" height="5" />
+      <rect x="5" y="51" rx="3" ry="3" width="93" height="5" />
+      <rect x="5" y="64" rx="3" ry="3" width="93" height="5" />
+      <rect x="5" y="77" rx="3" ry="3" width="93" height="5" />
+
+      <rect x="0" y="95" rx="3" ry="3" width="100" height="18" />
+      <rect x="0" y="120" rx="3" ry="3" width="50" height="5" />
+      <rect x="0" y="130" rx="3" ry="3" width="100" height="5" />
+    </vue-content-loading>
   </div>
 </template>
 
 <script>
+  import VueContentLoading from "vue-content-loading"
     export default {
         props: ['sidebar'],
         name: "CategorySidebar",
+      components: {VueContentLoading},
         data() {
           return {
             priceMax: 0,

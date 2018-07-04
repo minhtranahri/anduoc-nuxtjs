@@ -2116,6 +2116,7 @@ header .wrap-header #header-res .acc-res .content-acc-ress .list-acc-res li a b 
   background: #ffffff;
   height: auto;
   width: 200px;
+  min-height: 241px;
 }
 
 .main-menu-fix #slimScrollDiv .menu > ul > li {

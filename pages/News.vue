@@ -35,38 +35,53 @@
         }
       },
 
-      async asyncData({app}){
-        let [news] = await Promise.all([
-          app.$axios.get('http://dev.anduoc.vn/api/news')
-        ])
-        return {
-          breadcrumb: news.data.data.breadcrumb,
-          topnews: news.data.data,
-          bottomnews: news.data.data.cate_news,
-          sidebar: news.data.data.product,
+      async asyncData({app, store}){
+        if(store.state.ssrDetector){
+          store.state.loaded = true;
+          let [news] = await Promise.all([
+            app.$axios.get('http://dev.anduoc.vn/api/news')
+          ])
+          return {
+            breadcrumb: news.data.data.breadcrumb,
+            topnews: news.data.data,
+            bottomnews: news.data.data.cate_news,
+            sidebar: news.data.data.product,
+          }
+        }
+        else {
+          return false;
+        }
+      },
+
+      methods: {
+        callAPI: function () {
+          this.$axios
+            .get('http://dev.anduoc.vn/api/news')
+            .then(response => {
+              this.breadcrumb = response.data.data.breadcrumb;
+              this.topnews = response.data.data;
+              this.bottomnews = response.data.data.cate_news;
+              this.sidebar = response.data.data.product;
+              if(response){
+                this.$store.commit('toggleLoadingStatus');
+              }
+            })
+        }
+      },
+
+      mounted(){
+        if(this.$store.state.ssrDetector == false){
+          this.callAPI();
+        }
+      },
+
+      beforeMount(){
+        if(this.$store.state.loaded && this.$store.state.ssrDetector == false){
+          this.$store.commit('toggleLoadingStatus');
         }
       }
-
-      // mounted() {
-      //   this.$axios
-      //     .get('http://dev.anduoc.vn/api/news')
-      //     .then(response => {
-      //       this.breadcrumb = response.data.data.breadcrumb;
-      //       this.topnews = response.data.data;
-      //       this.bottomnews = response.data.data.cate_news;
-      //       this.sidebar = response.data.data.product;
-      //       if(response){
-      //         this.$store.commit('toggleLoadingStatus');
-      //       }
-      //     })
-      // },
-
-      // beforeMount() {
-      //     if(this.$store.state.loaded == true){
-      //       this.$store.commit('toggleLoadingStatus');
-      //     }
-      //   }
     }
+
 </script>
 
 <style scoped>

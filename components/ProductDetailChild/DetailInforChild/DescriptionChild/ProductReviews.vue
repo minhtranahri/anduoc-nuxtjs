@@ -1,55 +1,55 @@
 <template>
-    <div v-if="reviewsData != null">
-      <div class="product-evaluate-content">
+    <div>
+      <div v-if="dataReview != null" class="product-evaluate-content">
         <script>
         //user.set(0, '', 786, 1, 0, '/dang-nhap.aspx?urlreturn=L3N1YS1nbHVjZXJuYS1odW9uZy12YW5pLWFiYm90dC1sb24tNDAwZy1wNzg2Lmh0bWw-');
         </script>
         <div class="result_rating w40">
           <div class="wrap_star_reviews w40">
-            <div class="start_review"><i class="mcon-star"></i><span class="point-review">{{reviewsData.average}}</span></div>
+            <div class="start_review"><i class="mcon-star"></i><span class="point-review">{{dataReview.average}}</span></div>
             <div class="text_star_reviews">
               Sản phẩm như mô tả
               <br>
-              ({{reviewsData.total}} đánh giá)
+              ({{dataReview.total}} đánh giá)
             </div>
           </div>
           <div class="content_detail_star_reviews w60">
             <div class="item_detail_star_reviews">
               <span class="number_star">5 <i class="mcon-star"></i></span>
               <span class="percent_bar">
-                <span :style="'width: '+percentGenerate(reviewsData.count_el[5],rating1[4])+'%'">
+                <span :style="'width: '+percentGenerate(dataReview.count_el[5],rating1[4])+'%'">
 
                 </span>
               </span>
-              <span class="percent_star">{{Math.trunc(percentGenerate(reviewsData.count_el[5],rating1[4]))}}%</span>
+              <span class="percent_star">{{Math.trunc(percentGenerate(dataReview.count_el[5],rating1[4]))}}%</span>
             </div>
             <div class="item_detail_star_reviews">
               <span class="number_star">4 <i class="mcon-star"></i></span>
               <span class="percent_bar">
-                                           <span :style="'width: '+percentGenerate(reviewsData.count_el[4],rating1[3])+'%'"></span>
+                                           <span :style="'width: '+percentGenerate(dataReview.count_el[4],rating1[3])+'%'"></span>
                                        </span>
-              <span class="percent_star">{{Math.trunc(percentGenerate(reviewsData.count_el[4],rating1[3]))}}%</span>
+              <span class="percent_star">{{Math.trunc(percentGenerate(dataReview.count_el[4],rating1[3]))}}%</span>
             </div>
             <div class="item_detail_star_reviews">
               <span class="number_star">3 <i class="mcon-star"></i></span>
               <span class="percent_bar">
-                                           <span :style="'width: '+percentGenerate(reviewsData.count_el[3],rating1[2])+'%'"></span>
+                                           <span :style="'width: '+percentGenerate(dataReview.count_el[3],rating1[2])+'%'"></span>
                                        </span>
-              <span class="percent_star">{{Math.trunc(percentGenerate(reviewsData.count_el[3],rating1[2]))}}%</span>
+              <span class="percent_star">{{Math.trunc(percentGenerate(dataReview.count_el[3],rating1[2]))}}%</span>
             </div>
             <div class="item_detail_star_reviews">
               <span class="number_star">2 <i class="mcon-star"></i></span>
               <span class="percent_bar">
-                                           <span :style="'width: '+percentGenerate(reviewsData.count_el[2],rating1[1])+'%'"></span>
+                                           <span :style="'width: '+percentGenerate(dataReview.count_el[2],rating1[1])+'%'"></span>
                                        </span>
-              <span class="percent_star">{{Math.trunc(percentGenerate(reviewsData.count_el[2],rating1[1]))}}%</span>
+              <span class="percent_star">{{Math.trunc(percentGenerate(dataReview.count_el[2],rating1[1]))}}%</span>
             </div>
             <div class="item_detail_star_reviews">
               <span class="number_star">1 <i class="mcon-star"></i></span>
               <span class="percent_bar">
-                                           <span :style="'width: '+percentGenerate(reviewsData.count_el[1],rating1[0])+'%'"></span>
+                                           <span :style="'width: '+percentGenerate(dataReview.count_el[1],rating1[0])+'%'"></span>
                                        </span>
-              <span class="percent_star">{{Math.trunc(percentGenerate(reviewsData.count_el[1],rating1[0]))}}%</span>
+              <span class="percent_star">{{Math.trunc(percentGenerate(dataReview.count_el[1],rating1[0]))}}%</span>
             </div>
           </div>
         </div>
@@ -90,10 +90,26 @@
             </div>
         </div>
       </div>
-      <div class="product-facebook-comment">
+      <vue-content-loading v-if="dataReview == null" width="100" height="70" primary="#d8d2d2" secondary="#c1baba" speed="1">
+        <rect x="0" y="0" rx="1" ry="1" width="100" height="20" />
+
+        <circle cx="5" cy="27" r="3" />
+        <rect x="10" y="25.5" rx="1" ry="1" width="10" height="1" />
+        <rect x="10" y="27.5" rx="1" ry="1" width="15" height="1" />
+        <rect x="2" y="31" rx="1" ry="1" width="50" height="1" />
+      </vue-content-loading>
+      <vue-content-loading v-if="!commentLoadStatus" width="100" height="10" primary="#d8d2d2" secondary="#c1baba" speed="1">
+        <!--<rect x="0" y="0" rx="1" ry="1" width="100" height="20" />-->
+
+        <circle cx="5" cy="5" r="3" />
+        <rect x="10" y="3.5" rx="1" ry="1" width="10" height="1" />
+        <rect x="10" y="5.5" rx="1" ry="1" width="15" height="1" />
+        <rect x="2" y="9" rx="1" ry="1" width="50" height="1" />
+      </vue-content-loading>
+      <div v-if="dataReview != null" class="product-facebook-comment">
         <div class="product-facebook-comment-content">
           <div id="box-reviews">
-            <div v-for="(item, index) in reviewsData.child" :key="index" class="item-reviews" :id="'reviews-'+item.id" :data-id="item.id">
+            <div v-for="(item, index) in dataReview.child" :key="index" class="item-reviews" :id="'reviews-'+item.id" :data-id="item.id">
               <div class="ava-user-rev"
                    :style="'background-image: url(\'http://graph.facebook.com/'+item.fbId_user+'/picture?type=square\')'"></div>
               <div class="reviews_main">
@@ -122,25 +138,35 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 </template>
 
 <script>
+  import VueContentLoading from "vue-content-loading"
+  import VclFacebook from "vue-content-loading"
+
     export default {
         props: ['reviews', 'products'],
         name: "ProductReviews",
+      components: {VueContentLoading, VclFacebook},
         data() {
           return {
             rating: 0,
             content: '',
-            reviewsData: null,
+            commentLoadStatus: true,
             rating1: [0,0,0,0,0],
             temp: false
           }
         },
 
+        computed: {
+          dataReview: function () {
+            return this.reviews
+          }
+        },
+
         mounted() {
-          this.reviewsData = this.reviews;
+          console.log(this.reviews)
         },
 
         watch: {
@@ -150,27 +176,36 @@
         },
 
         methods: {
-          callApi: function() {
+          toggleCommentLoadStatus: function() {
+            this.commentLoadStatus = !this.commentLoadStatus
+          },
+          recallApi: function() {
             this.$axios
               .get('http://dev.anduoc.vn/api/product/'+this.$route.params.id)
               .then(response => {
-                this.reviewsData = response.data.data.reviews;
+                this.reviews = response.data.data.reviews;``
+                if(response){
+                  this.toggleCommentLoadStatus()
+                }
               });
           },
-          percentGenerate: function (items,temp) {
+          percentGenerate: function (items, tempValue) {
            if(isNaN(items)){
-             return temp == 0?0:temp/(this.reviews.total+temp)*100;
+             return tempValue == 0?0:tempValue/(this.reviews.total+tempValue)*100;
            }
            else{
-             if(this.temp == false){
-               return ((items+temp)/(this.reviews.total+temp))*100;
+             if(!this.temp){
+               return (items/(this.reviews.total))*100;
              }
              else {
-               return ((items+temp)/(this.reviews.total+1))*100;
+               return ((items+tempValue)/(this.reviews.total+1))*100;
              }
            }
           },
-          postReview: function () {
+          postReview: async function () {
+            if(this.$store.state.loaded == true){
+              await this.toggleCommentLoadStatus()
+            }
             this.$axios
               .post('http://dev.anduoc.vn/api/reviews',
               'id_user=1' +
@@ -183,7 +218,7 @@
               '&rev_parent_id=0'
             ).then(response => {
               if(response){
-                this.callApi();
+                this.recallApi();
                 this.rating1 = [0,0,0,0,0];
               }
             })
