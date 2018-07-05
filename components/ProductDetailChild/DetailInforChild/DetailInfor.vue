@@ -131,7 +131,7 @@
         <span>Hỗ trợ 2-0944944449 </span>
       </p>
     </div>
-    <vue-content-loading v-if="!this.$store.state.loaded" :width="100" :height="100" primary="#d8d2d2" secondary="#c1baba" speed="1">
+    <vue-content-loading v-if="!this.$store.state.loaded" :width="100" :height="100" primary="#eeeeee" secondary="#f7f7f7" speed="1">
       <rect x="0" y="0" rx="1" ry="1" width="100" height="5" />
       <rect x="0" y="6" rx="1" ry="1" width="60" height="5" />
       <rect x="0" y="15" rx="1" ry="1" width="30" height="5" />

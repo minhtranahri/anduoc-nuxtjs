@@ -27,6 +27,12 @@
     import SameRight from "../components/ProductDetailChild/SameRight";
 
     export default {
+        head() {
+          return {
+            title: this.product == null?'-':this.product.name,
+            meta: this.metaa
+          }
+        },
         layout: 'Header',
         name: "ProductDetail",
         components: {
@@ -34,13 +40,15 @@
           Breadcrumb,
           ProductInfor
         },
+
         data() {
           return {
             breadcrumb: null,
             product: null,
             same: null,
             reviews: null,
-            loaded: false
+            loaded: false,
+            metaa: []
           }
         },
 
@@ -60,7 +68,8 @@
               this.same = response.data.data.product_same;
               this.product = response.data.data.product_detail;
               this.reviews = response.data.data.reviews;
-              if(response){
+              this.metaa = response.data.data.meta;
+              if(response && this.$route.name == 'ProductDetail'){
                 this.$store.commit('toggleLoadingStatus');
               }
             });
@@ -68,7 +77,6 @@
       },
 
       mounted() {
-          console.log('parent mounted')
         if(!this.$store.state.ssrDetector){
           this.getData();
         }
@@ -85,6 +93,7 @@
               same: detailProduct.data.data.product_same,
               product: detailProduct.data.data.product_detail,
               reviews: detailProduct.data.data.reviews,
+              metaa: detailProduct.data.data.meta
             }
           }
           else return false;

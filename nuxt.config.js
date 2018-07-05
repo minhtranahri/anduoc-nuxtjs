@@ -3,6 +3,11 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  loadingIndicator: {
+    name: 'pulse',
+    color: 'red',
+    background: 'white'
+  },
   serverMiddleware: [
     {
       handler(req, res, next){
@@ -55,7 +60,7 @@ module.exports = {
   },
   mode: 'default',
   head: {
-    title: 'anduoc-nuxt',
+    title: 'Dược phẩm an dược',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

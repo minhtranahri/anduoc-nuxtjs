@@ -7,7 +7,7 @@
       <img :alt="product.name"
            :src="product.picture_thumb[0].url" onerror="this.src = '/images/default.jpg'"/>
     </div>
-    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="135" primary="#d8d2d2" secondary="#c1baba" speed="1">
+    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="135" primary="#eeeeee" secondary="#f7f7f7" speed="1">
       <rect x="0" y="0" rx="3" ry="3" width="100" height="100" />
       <rect x="0" y="101" rx="3" ry="3" width="33" height="30" />
       <rect x="34" y="101" rx="3" ry="3" width="33" height="30" />

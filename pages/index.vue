@@ -9,6 +9,12 @@
 
   export default {
     //props: ['loaded'],
+    head() {
+      return {
+        title: 'Dược phẩm an dược',
+        meta: this.metaa
+      }
+    },
     layout: 'Header',
     name: "Home",
     components:{
@@ -19,9 +25,20 @@
           hots: null,
           news: null,
           categories: null,
-          banner: null
+          banner: null,
+          metaa: []
         }
     },
+
+    // watch: {
+    //   metaa: function () {
+    //     if(this.result != null){
+    //       this.news.meta.forEach(function (entry) {
+    //         this.metaa.push(entry)
+    //       })
+    //     }
+    //   }
+    // },
 
     methods: {
       callApi: function () {
@@ -31,7 +48,8 @@
               this.hots = response.data.data.product_hot;
               this.categories = response.data.data.main;
               this.banner = response.data.data.banner_home;
-              if(response){
+              this.metaa = response.data.data.meta;
+              if(response && this.$route.name == 'index'){
                 this.$store.commit('toggleLoadingStatus');
               }
             });
@@ -51,13 +69,12 @@
           app.$axios.get('http://dev.anduoc.vn/api/home'),
           app.$axios.get('http://dev.anduoc.vn/api/product/new'),
         ]);
-        console.log('async data api loaded');
-        //store.commit('toggleLoadingStatus');
         return {
           hots: getHome.data.data.product_hot,
           categories: getHome.data.data.main,
           banner: getHome.data.data.banner_home,
           news: getNew.data.data,
+          metaa: getHome.data.data.meta
         }
       }
       else{

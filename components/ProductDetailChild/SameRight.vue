@@ -19,7 +19,7 @@
 
       </div>
     </div>
-    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="400" primary="#d8d2d2" secondary="#c1baba" speed="1">
+    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="400" primary="#eeeeee" secondary="#f7f7f7" speed="1">
       <rect x="3" y="0" rx="3" ry="3" width="97" height="70" />
       <rect x="20" y="73" rx="3" ry="3" width="60" height="5" />
       <rect x="3" y="81.5" rx="3" ry="3" width="97" height="3.5" />

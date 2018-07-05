@@ -21,7 +21,7 @@
       </div>
     </div>
     </div>
-    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="120" primary="#d8d2d2" secondary="#c1baba" speed="1">
+    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="120" primary="#eeeeee" secondary="#f7f7f7" speed="1">
       <rect x="0" y="1" rx="0.5" ry="0.5" width="100" height="2" />
       <rect x="0" y="4" rx="0.5" ry="0.5" width="100" height="2" />
       <rect x="0" y="7" rx="0.5" ry="0.5" width="40" height="2" />

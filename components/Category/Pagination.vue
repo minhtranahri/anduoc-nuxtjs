@@ -29,7 +29,7 @@
       </nuxt-link>
     </span>
     </div>
-    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="5" primary="#d8d2d2" secondary="#c1baba" speed="1">
+    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="5" primary="#eeeeee" secondary="#f7f7f7" speed="1">
       <rect x="35" y="0" rx="0.5" ry="0.5" width="3.5" height="3.5" />
       <rect x="39.5" y="0" rx="0.5" ry="0.5" width="3.5" height="3.5" />
       <rect x="44" y="0" rx="0.5" ry="0.5" width="3.5" height="3.5" />

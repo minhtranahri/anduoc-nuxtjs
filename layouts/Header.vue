@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <app-header :class="this.$route.path == '/'?'home-anduoc':''" v-if="keyobj" :key_obj="keyobj"/>
+  <div :class="this.$route.path == '/'?'home-anduoc':''">
+      <app-header v-if="keyobj" :key_obj="keyobj"/>
       <nuxt/>
       <app-footer/>
     </div>

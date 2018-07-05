@@ -4,7 +4,7 @@
       <div class="jsSlide">
         <div class="carousel-slide">
           <home-top-slide v-if="this.$store.state.loaded" :banner="banner"/>
-          <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="30" primary="#d8d2d2" secondary="#c1baba" speed="1">
+          <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="30" primary="#eeeeee" secondary="#f7f7f7" speed="1">
             <rect x="0" y="0" rx="1" ry="1" width="100" height="27" />
           </vue-content-loading>
         </div>

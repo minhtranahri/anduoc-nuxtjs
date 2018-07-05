@@ -19,7 +19,7 @@
             </li>
             <li class="news-active">
             </li>
-            <vue-content-loading height=120 width=100 v-if="!this.$store.state.loaded" primary="#d8d2d2" secondary="#c1baba" speed="1">
+            <vue-content-loading height=120 width=100 v-if="!this.$store.state.loaded" primary="#eeeeee" secondary="#f7f7f7" speed="1">
               <rect x="5" y="0" rx="3" ry="3" width="90" height="10" />
               <rect x="5" y="13" rx="3" ry="3" width="90" height="10" />
               <rect x="5" y="26" rx="3" ry="3" width="90" height="10" />

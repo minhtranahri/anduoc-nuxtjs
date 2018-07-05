@@ -20,6 +20,12 @@
     import HotSidebar from "../components/NewsDetail/HotSidebar";
 
     export default {
+        head() {
+          return {
+            title: this.hot == null?'-':this.hot.title,
+            meta: this.metaa
+          }
+        },
         layout: 'Header',
         name: "NewsDetail",
         components: {HotSidebar, NewsContent, Breadcrumb},
@@ -29,6 +35,7 @@
             breadcrumb: null,
             content: null,
             hot: null,
+            metaa: []
           }
         },
 
@@ -40,7 +47,8 @@
                 this.breadcrumb = response.data.data.breadcrumb;
                 this.content = response.data.data.detail;
                 this.hot = response.data.data;
-                if(response){
+                this.metaa = response.data.data.meta
+                if(response && this.$route.name == 'NewsDetail'){
                   this.$store.state.loaded = true;
                 }
               })
@@ -61,6 +69,7 @@
               breadcrumb: response.data.data.breadcrumb,
               content: response.data.data.detail,
               hot: response.data.data,
+              metaa: response.data.data.meta
             }
           }
           else return false;

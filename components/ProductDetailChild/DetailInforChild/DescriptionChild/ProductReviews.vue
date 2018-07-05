@@ -90,7 +90,7 @@
             </div>
         </div>
       </div>
-      <vue-content-loading v-if="dataReview == null" width="100" height="70" primary="#d8d2d2" secondary="#c1baba" speed="1">
+      <vue-content-loading v-if="dataReview == null" width="100" height="70" primary="#eeeeee" secondary="#f7f7f7" speed="1">
         <rect x="0" y="0" rx="1" ry="1" width="100" height="20" />
 
         <circle cx="5" cy="27" r="3" />
@@ -98,7 +98,7 @@
         <rect x="10" y="27.5" rx="1" ry="1" width="15" height="1" />
         <rect x="2" y="31" rx="1" ry="1" width="50" height="1" />
       </vue-content-loading>
-      <vue-content-loading v-if="!commentLoadStatus" width="100" height="10" primary="#d8d2d2" secondary="#c1baba" speed="1">
+      <vue-content-loading v-if="!commentLoadStatus" width="100" height="10" primary="#eeeeee" secondary="#f7f7f7" speed="1">
         <!--<rect x="0" y="0" rx="1" ry="1" width="100" height="20" />-->
 
         <circle cx="5" cy="5" r="3" />
@@ -109,7 +109,7 @@
       <div v-if="dataReview != null" class="product-facebook-comment">
         <div class="product-facebook-comment-content">
           <div id="box-reviews">
-            <div v-for="(item, index) in dataReview.child" :key="index" class="item-reviews" :id="'reviews-'+item.id" :data-id="item.id">
+            <div v-for="(item, index) in dataReview.child" :key="index" class="item-reviews" :id="'reviews-'+item.id" :data-id="item.id" v-if="item.content != ''">
               <div class="ava-user-rev"
                    :style="'background-image: url(\'http://graph.facebook.com/'+item.fbId_user+'/picture?type=square\')'"></div>
               <div class="reviews_main">
@@ -126,7 +126,7 @@
                   </div>
                 </h4>
 
-                <p class="content-reviews"><span>{{item.content}}</span></p>
+                <p class="content-reviews"><span>{{ unescaped(unescaped(unescaped(unescaped(item.content)))) }}</span></p>
               </div>
               <div class="bottom-reviews">
                 <a class="reply">Trả lời</a>
@@ -151,7 +151,7 @@
       components: {VueContentLoading, VclFacebook},
         data() {
           return {
-            rating: 0,
+            rating: 1,
             content: '',
             commentLoadStatus: true,
             rating1: [0,0,0,0,0],
@@ -176,6 +176,15 @@
         },
 
         methods: {
+          unescaped: function (text) {
+            return text
+              .replace("&amp;", "&")
+              .replace("&lt;", "<")
+              .replace("&gt;",">")
+              .replace("&quot;","\"")
+              .replace("&#039;", "'");
+          },
+
           toggleCommentLoadStatus: function() {
             this.commentLoadStatus = !this.commentLoadStatus
           },
@@ -183,9 +192,10 @@
             this.$axios
               .get('http://dev.anduoc.vn/api/product/'+this.$route.params.id)
               .then(response => {
-                this.reviews = response.data.data.reviews;``
+                this.reviews = response.data.data.reviews;
                 if(response){
-                  this.toggleCommentLoadStatus()
+                  this.toggleCommentLoadStatus();
+                  this.temp = false;
                 }
               });
           },
@@ -203,25 +213,30 @@
            }
           },
           postReview: async function () {
-            if(this.$store.state.loaded == true){
-              await this.toggleCommentLoadStatus()
-            }
-            this.$axios
-              .post('http://dev.anduoc.vn/api/reviews',
-              'id_user=1' +
-              '&id_object='+ this.products.id +
-              '&rev_type=1' +
-              '&fbId_user=100004752368436' +
-              '&name_user=Thu+Trang' +
-              '&rating='+ this.rating +
-              '&content_reviews='+ this.content +
-              '&rev_parent_id=0'
-            ).then(response => {
-              if(response){
-                this.recallApi();
-                this.rating1 = [0,0,0,0,0];
+            if(this.content != ""){
+              if(this.$store.state.loaded == true){
+                await this.toggleCommentLoadStatus()
               }
-            })
+              this.$axios
+                .post('http://dev.anduoc.vn/api/reviews',
+                  'id_user=1' +
+                  '&id_object='+ this.products.id +
+                  '&rev_type=1' +
+                  '&fbId_user=100004752368436' +
+                  '&name_user=Thu+Trang' +
+                  '&rating='+ this.rating +
+                  '&content_reviews='+ this.content +
+                  '&rev_parent_id=0'
+                ).then(response => {
+                if(response){
+                  this.recallApi();
+                  this.rating1 = [0,0,0,0,0];
+                }
+              })
+            }
+            if(this.content == ""){
+              alert('Không có nội dung')
+            }
           },
           tempPercentGenerate: function(level){
             this.temp=true;

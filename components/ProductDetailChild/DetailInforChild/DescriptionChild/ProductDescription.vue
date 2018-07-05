@@ -7,7 +7,7 @@
     </div>
     <!--<a href="javascript:void(0)" class="view-all-detail" title="Xem thêm sản phẩm" rel="nofollow"-->
        <!--onclick="viewAllInfomationContent()">Xem thêm</a>-->
-    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="100" primary="#d8d2d2" secondary="#c1baba" speed="1">
+    <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="100" primary="#eeeeee" secondary="#f7f7f7" speed="1">
       <rect x="0" y="0" rx="0.5" ry="0.5" width="100" height="1" />
       <rect x="0" y="1.5" rx="0.5" ry="0.5" width="100" height="1" />
       <rect x="0" y="3" rx="0.5" ry="0.5" width="100" height="1" />

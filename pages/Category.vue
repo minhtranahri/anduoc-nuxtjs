@@ -25,6 +25,12 @@
     import Products from "../components/Category/Products";
     import Pagination from "../components/Category/Pagination";
     export default {
+        head() {
+          return {
+            title: this.sidebar != null?this.sidebar.title:'-',
+            meta: this.metaa
+          }
+        },
         layout: 'Header',
         name: "Category",
         components: {Pagination, Products, AppFilter:Filter, CategorySidebar, Breadcrumb},
@@ -34,6 +40,7 @@
             sidebar: null,
             pagination: null,
             breadcrumb: null,
+            metaa: []
           }
         },
 
@@ -57,7 +64,8 @@
                 this.sidebar = response.data.data;
                 this.pagination = response.data.data.page;
                 this.breadcrumb = response.data.data.breadcrumb;
-                if(response){
+                this.metaa = response.data.data.meta
+                if(response && this.$route.name == 'Category'){
                   this.$store.commit('toggleLoadingStatus');
                 }
               })
@@ -75,6 +83,7 @@
                 sidebar: category.data.data,
                 pagination: category.data.data.page,
                 breadcrumb: category.data.data.breadcrumb,
+                metaa: category.data.data.meta
               }
             }
           },

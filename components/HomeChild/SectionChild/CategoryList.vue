@@ -108,7 +108,7 @@
         </div>
       </div>
     </div>
-    <vue-content-loading height="250" width="100" v-if="!this.$store.state.loaded" primary="#d8d2d2" secondary="#c1baba" speed="1">
+    <vue-content-loading height="250" width="100" v-if="!this.$store.state.loaded" primary="#eeeeee" secondary="#f7f7f7" speed="1">
       <rect x="0" y="0" rx="0.5" ry="0.5" width="20" height="10" />
       <rect x="2" y="12" rx="0.5" ry="0.5" width="17" height="1" />
       <rect x="2" y="14" rx="0.5" ry="0.5" width="17" height="1" />

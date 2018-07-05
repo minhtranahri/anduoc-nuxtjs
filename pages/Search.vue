@@ -83,7 +83,7 @@
           </div>
         </div>
         <pagination v-if="this.$store.state.loaded" :pagination="pagination"/>
-        <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="100" primary="#d8d2d2" secondary="#c1baba" speed="1">
+        <vue-content-loading v-if="!this.$store.state.loaded" width="100" height="100" primary="#eeeeee" secondary="#f7f7f7" speed="1">
           <rect x="0" y="1" rx="0.5" ry="0.5" width="23" height="0" />
 
           <rect x="0" y="3" rx="0.5" ry="0.5" width="19" height="12" />
@@ -172,6 +172,12 @@
     import Pagination from "../components/Category/Pagination";
     import VueContentLoading from "vue-content-loading"
     export default {
+      head() {
+        return {
+          title: this.$store.state.key+' - An dược',
+          meta: this.metaa
+        }
+      },
       layout: 'Header',
         name: "Search",
       components: {Pagination, VueContentLoading},
@@ -182,6 +188,7 @@
             isChanged: true,
             opacity: 'opacity: 0.5',
             keyword: null,
+            metaa: []
           }
         },
 
@@ -208,21 +215,13 @@
 
         methods: {
           getAPI: function () {
-            let key = this.$route.query.keyword;
-            if(this.$route.query.page != 'undefined'){
-              let page = this.$route.query.page;
-              var endpoint = key+'&page='+page;
-            }
-            else{
-              endpoint = key;
-            }
-
             this.$axios
-              .get('http://dev.anduoc.vn/api/search?keyword='+endpoint)
+              .get('http://dev.anduoc.vn/api'+this.$route.fullPath)
               .then(response => {
                 this.result = response.data.data;
                 this.pagination = response.data.data.page;
-                if(response){
+                this.metaa = response.data.data.meta;
+                if(response && this.$route.name == 'Search'){
                   this.$store.state.loaded = true;
                 }
               })
@@ -234,7 +233,8 @@
               .then(response => {
                 this.result = response.data.data;
                 this.pagination = response.data.data.page;
-                if(response){
+                this.metaa = response.data.data.meta;
+                if(response && this.$route.name == 'Search'){
                   this.$store.state.loaded = true;
                 }
               })
@@ -262,6 +262,7 @@
             return {
               result: result.data.data,
               pagination: result.data.data.page,
+              metaa: result.data.data.meta
             }
           }
           else return false;

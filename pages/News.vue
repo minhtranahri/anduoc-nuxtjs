@@ -23,6 +23,12 @@
     import Breadcrumb from "../components/ProductDetailChild/breadcrumb";
 
     export default {
+      head() {
+        return {
+          title: 'Tin tức',
+          meta: this.metaa
+        }
+      },
       layout: 'Header',
       name: "News",
       components: {Breadcrumb, SideBar, BottomChild, TopNews},
@@ -32,6 +38,7 @@
           topnews: null,
           bottomnews: null,
           sidebar: null,
+          metaa: []
         }
       },
 
@@ -46,6 +53,7 @@
             topnews: news.data.data,
             bottomnews: news.data.data.cate_news,
             sidebar: news.data.data.product,
+            metaa: news.data.data.meta
           }
         }
         else {
@@ -62,7 +70,8 @@
               this.topnews = response.data.data;
               this.bottomnews = response.data.data.cate_news;
               this.sidebar = response.data.data.product;
-              if(response){
+              this.metaa = response.data.data.meta;
+              if(response && this.$route.name == 'News'){
                 this.$store.commit('toggleLoadingStatus');
               }
             })
@@ -76,6 +85,7 @@
       },
 
       beforeMount(){
+
         if(this.$store.state.loaded && this.$store.state.ssrDetector == false){
           this.$store.commit('toggleLoadingStatus');
         }
