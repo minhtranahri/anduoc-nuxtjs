@@ -1,4 +1,5 @@
 # anduoc-nuxt
+Playground for nuxt, ssr
 
 > Nuxt.js project
 
